@@ -5,6 +5,8 @@ use Illuminate\Support\Facades\Route;
 
 use App\Http\Controllers\Admin\DashboardController as DashboardController;
 
+use App\Http\Controllers\Admin\ProjectController as ProjectController;
+
 /*
 |--------------------------------------------------------------------------
 | Web Routes
