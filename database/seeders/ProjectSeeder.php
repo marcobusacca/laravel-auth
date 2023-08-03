@@ -14,8 +14,14 @@ class ProjectSeeder extends Seeder
      *
      * @return void
      */
-    public function run()
+    public function run(Faker $faker)
     {
-        //
+        for ($i = 1; $i <= 10; $i++){
+            $project = new Project();
+            $project->title = $faker->word();
+            $project->description = $faker->paragraph();
+            $project->date_of_creation = $faker->dateTimeThisYear();
+            $project->save();
+        }
     }
 }
