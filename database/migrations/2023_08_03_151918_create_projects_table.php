@@ -17,7 +17,7 @@ return new class extends Migration
             $table->id();
             $table->string('title', 50);
             $table->text('description');
-            $table->date('date-of-creation');
+            $table->date('date_of_creation');
             $table->timestamps();
         });
     }
