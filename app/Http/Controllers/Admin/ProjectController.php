@@ -57,7 +57,7 @@ class ProjectController extends Controller
 
         $project->save();
 
-        return redirect()->route('admin.projects.index');
+        return redirect()->route('admin.projects.show', $project);
     }
 
     /**
