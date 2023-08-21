@@ -14,15 +14,24 @@
                     @csrf
                     <div class="form-group my-4">
                         <label class="control-label my-2">Titolo:</label>
-                        <input type="text" name="title" id="title" placeholder="Inserisci il Titolo del Progetto" class="form-control" value="{{ old('title') }}" required>
+                        <input type="text" name="title" id="title" placeholder="Inserisci il Titolo del Progetto" class="form-control @error('title') is-invalid @enderror" value="{{ old('title') }}" required>
+                        @error('title')
+                            <div class="text-danger">{{ $message }}</div>
+                        @enderror
                     </div>
                     <div class="form-group my-4">
                         <label class="control-label my-2">Descrizione:</label>
-                        <textarea name="description" id="description" placeholder="Inserisci la Descrizione del Progetto" class="form-control" cols="30" rows="10" required>{{ old('description') }}</textarea>
+                        <textarea name="description" id="description" placeholder="Inserisci la Descrizione del Progetto" class="form-control @error('description') is-invalid @enderror" cols="30" rows="10" required>{{ old('description') }}</textarea>
+                        @error('description')
+                            <div class="text-danger">{{ $message }}</div>
+                        @enderror
                     </div>
                     <div class="form-group my-4">
                         <label class="control-label my-2">Data di Creazione:</label>
-                        <input type="date" name="date_of_creation" id="date_of_creation" class="form-control" value="{{ old('date_of_creation') }}" required>
+                        <input type="date" name="date_of_creation" id="date_of_creation" class="form-control @error('date_of_creation') is-invalid @enderror" value="{{ old('date_of_creation') }}" required>
+                        @error('date_of_creation')
+                            <div class="text-danger">{{ $message }}</div>
+                        @enderror
                     </div>
                     <div class="col-12 d-flex justify-content-center align-items-center my-5">
                         <button class="btn btn-success fw-bold px-5" type="submit">CREA</button>
