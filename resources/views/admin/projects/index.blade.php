@@ -32,7 +32,7 @@
                                     <a href="{{ route('admin.projects.edit', $project) }}" class="btn btn-warning mx-1">
                                         <i class="fas fa-edit"></i>
                                     </a>
-                                    <form class="d-inline-block mx-1" action="{{ route('admin.projects.destroy', $project) }}" method="POST" onsubmit="return confirm('Sei sicuro di voler cancellare questo progetto?')">
+                                    <form class="project-delete-button d-inline-block mx-1" action="{{ route('admin.projects.destroy', $project) }}" method="POST">
                                         @csrf
                                         @method('DELETE')
                                         <button type="submit" class="btn btn-danger">
@@ -52,5 +52,5 @@
             </div>
         </div>
     </div>
-    @include('admin.partials.modal_delete');
+    @include('admin.partials.modal_project_delete');
 @endsection
