@@ -7,10 +7,10 @@
                 <h1>Modifica il Progetto "{{ $project->title }}"</h1>
             </div>
             <div class="col-6 d-flex justify-content-end align-items-end mt-5">
-                <a href="{{ Route('admin.projects.index') }}" class="btn btn-primary">Lista Progetti</a>
+                <a href="{{ route('admin.projects.index') }}" class="btn btn-primary">Lista Progetti</a>
             </div>
             <div class="col-12 my-5">
-                <form action="{{ route('admin.projects.update', $project)}}" method="POST" class="border p-3 w-100">
+                <form action="{{ route('admin.projects.update', $project) }}" method="POST" class="border p-3 w-100">
                     @csrf
                     @method('PUT')
                     <div class="form-group my-4">
