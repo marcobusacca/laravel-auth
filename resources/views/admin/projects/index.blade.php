@@ -32,7 +32,7 @@
                                     <a href="{{ route('admin.projects.edit', $project) }}" class="btn btn-warning mx-1">
                                         <i class="fas fa-edit"></i>
                                     </a>
-                                    <form class="project-delete-button d-inline-block mx-1" action="{{ route('admin.projects.destroy', $project) }}" method="POST">
+                                    <form class="project-delete-button d-inline-block mx-1" data-project-title="{{ $project->title }}" action="{{ route('admin.projects.destroy', $project) }}" method="POST">
                                         @csrf
                                         @method('DELETE')
                                         <button type="submit" class="btn btn-danger">

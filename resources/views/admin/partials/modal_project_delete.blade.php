@@ -8,7 +8,7 @@
                 </button>
             </div>
             <div class="modal-body">
-                Sei Sicuro di Voler Cancellare Questo Progetto?
+                Sei Sicuro di Voler Cancellare il Progetto : "<span id="modal-project-title"></span>" ?
             </div>
             <div class="modal-footer">
                 <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Annulla</button>

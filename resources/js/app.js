@@ -17,6 +17,15 @@ projectDeleteButton.forEach((button) => {
         // QUANDO L'UTENTE CLICCA SUL DELETE_BUTTON, IL FORM NON VIENE AVVIATO GRAZIE A QUESTO COMANDO
         event.preventDefault();
 
+        // QUANDO L'UTENTE CLICCA SUL DELETE_BUTTON, MI VIENE PASSATO UN DATA ATTRIBUTE, LO RECUPERO TRAMITE QUESTA STRINGA
+        const projectTitle = button.getAttribute('data-project-title');
+
+        // RECUPERO IL TAG HTML DELLA MODALE DOVE INSERIRE IL DATA ATTRIBUTE RECUPERATO PRIMA
+        const modalProjectTitle = document.getElementById('modal-project-title');
+
+        // INSERISCO IL DATA ATTRIBUTE DENTRO IL "MODAL_PROJECT_TITLE"
+        modalProjectTitle.innerText = projectTitle;
+
         // RECUPERO L'HTML DELLA MODALE "MODAL_PROJECT_DELETE", DALLA VIEW ADMIN -> PARTIALS
         const modal = document.getElementById('projectConfirmDeleteModal');
 
