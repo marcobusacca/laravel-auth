@@ -44,7 +44,7 @@
                         @endforeach
                         <tr class="text-center">
                             <td colspan="4" class="py-4">
-                                <a href="" class="text-decoration-none">Crea un nuovo progetto</a>
+                                <a href="{{ route('admin.projects.create') }}" class="text-decoration-none">Crea un Nuovo Progetto</a>
                             </td>
                         </tr>
                     </tbody>
