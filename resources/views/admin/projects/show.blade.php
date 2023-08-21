@@ -3,10 +3,10 @@
 @section('content')
     <div class="container">
         <div class="row">
-            <div class="col-6 d-flex justify-content-start align-items-end mt-5">
+            <div class="col-6 d-flex justify-content-start align-items-end my-5">
                 <h1>{{ $project->title }}</h1>
             </div>
-            <div class="col-6 d-flex justify-content-end align-items-end mt-5">
+            <div class="col-6 d-flex justify-content-end align-items-end my-5">
                 <a href="{{ Route('admin.projects.index') }}" class="btn btn-primary">Lista Progetti</a>
             </div>
             @if ($message != '')
