@@ -4,6 +4,7 @@ namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
 use App\Models\Project;
+use Illuminate\Http\Request;
 use App\Http\Requests\StoreProjectRequest;
 use App\Http\Requests\UpdateProjectRequest;
 
@@ -14,10 +15,21 @@ class ProjectController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
+    public function index(Request $request)
     {
+        $datas = $request->all();
+
+        if (isset($datas['message'])){
+
+            $message = $datas['message'];
+
+        } else{
+            $message = '';
+        }
+
         $projects = Project::all();
-        return view('admin.projects.index', compact('projects'));
+
+        return view('admin.projects.index', compact('projects', 'message'));
     }
 
     /**
@@ -26,9 +38,19 @@ class ProjectController extends Controller
      * @param  \App\Models\Project  $project
      * @return \Illuminate\Http\Response
      */
-    public function show(Project $project)
+    public function show(Request $request, Project $project)
     {
-        return view('admin.projects.show', compact('project'));
+        $datas = $request->all();
+
+        if (isset($datas['message'])){
+
+            $message = $datas['message'];
+
+        } else{
+            $message = '';
+        }
+
+        return view('admin.projects.show', compact('project', 'message'));
     }
 
     /**
@@ -57,7 +79,9 @@ class ProjectController extends Controller
 
         $project->save();
 
-        return redirect()->route('admin.projects.show', $project);
+        $message = 'Creazione Progetto Completata';
+
+        return redirect()->route('admin.projects.show', compact('project', 'message'));
     }
 
     /**
@@ -84,7 +108,9 @@ class ProjectController extends Controller
 
         $project->update($form_data);
 
-        return redirect()->route('admin.projects.show', $project);
+        $message = 'Modifica Progetto Completata';
+
+        return redirect()->route('admin.projects.show', compact('project', 'message'));
     }
 
     /**
@@ -97,6 +123,8 @@ class ProjectController extends Controller
     {
         $project->delete();
 
-        return redirect()->route('admin.projects.index');
+        $message = 'Cancellazione Progetto Completata';
+
+        return redirect()->route('admin.projects.index', compact('message'));
     }
 }

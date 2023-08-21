@@ -9,7 +9,14 @@
             <div class="col-6 d-flex justify-content-end align-items-end mt-5">
                 <a href="{{ Route('admin.projects.index') }}" class="btn btn-primary">Lista Progetti</a>
             </div>
-            <div class="col-12 mt-5">
+            @if ($message != '')
+                <div class="col-12 mt-5">
+                    <div class="alert alert-success">
+                        <span>{{ $message }}</span>
+                    </div>
+                </div>
+            @endif
+            <div class="col-12">
                 <div class="card w-100">
                     <div class="card-body text-center">
                         <p class="card-text my-5">{{ $project->description }}</p>

@@ -9,7 +9,14 @@
             <div class="col-6 d-flex justify-content-end align-items-end mt-5">
                 <a href="{{ Route('admin.dashboard') }}" class="btn btn-primary">Dashboard</a>
             </div>
-            <div class="col-12 mt-5">
+            @if ($message != '')
+                <div class="col-12 mt-5">
+                    <div class="alert alert-success">
+                        <span>{{ $message }}</span>
+                    </div>
+                </div>
+            @endif
+            <div class="col-12">
                 <table class="table table-striped border">
                     <thead>
                         <tr class="text-center">
