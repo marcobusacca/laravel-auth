@@ -9,7 +9,7 @@
             <div class="col-6 d-flex justify-content-end align-items-end my-5">
                 <a href="{{ Route('admin.dashboard') }}" class="btn btn-primary">Dashboard</a>
             </div>
-            @if ($message != '')
+            @if (isset($message))
                 <div class="col-12 mt-5">
                     <div class="alert alert-success">
                         <span>{{ $message }}</span>

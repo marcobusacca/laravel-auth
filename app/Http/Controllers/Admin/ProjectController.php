@@ -17,15 +17,7 @@ class ProjectController extends Controller
      */
     public function index(Request $request)
     {
-        $datas = $request->all();
-
-        if (isset($datas['message'])){
-
-            $message = $datas['message'];
-
-        } else{
-            $message = '';
-        }
+        $message = $request->query->get('message');
 
         $projects = Project::all();
 
@@ -40,15 +32,7 @@ class ProjectController extends Controller
      */
     public function show(Request $request, Project $project)
     {
-        $datas = $request->all();
-
-        if (isset($datas['message'])){
-
-            $message = $datas['message'];
-
-        } else{
-            $message = '';
-        }
+        $message = $request->query->get('message');
 
         return view('admin.projects.show', compact('project', 'message'));
     }
