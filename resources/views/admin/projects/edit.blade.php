@@ -42,7 +42,11 @@
                             @endif
                         </div>
                         <div class="my-5">
-                            <label class="control-label my-2">Nuova Copertina:</label>
+                            @if (!empty($project->cover_image))
+                                <label class="control-label my-2">Nuova Copertina:</label>
+                            @else
+                                <label class="control-label my-2">Copertina:</label>
+                            @endif
                             <input type="file" name="cover_image" id="cover_image" class="form-control @error('cover_image') is-invalid @enderror" required>
                             @error('cover_image')
                                 <div class="text-danger">{{ $message }}</div>
