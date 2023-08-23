@@ -36,8 +36,8 @@
                     </div>
                     <div class="form-group my-4">
                         <div class="my-5">
-                            <label class="d-block control-label">Copertina Attuale:</label>
                             @if (!empty($project->cover_image))
+                                <label class="d-block control-label">Copertina Attuale:</label>
                                 <img src="{{ asset('storage/'.$project->cover_image) }}" alt="{{ $project->title }}-cover-image">
                             @endif
                         </div>
