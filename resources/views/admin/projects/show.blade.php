@@ -21,6 +21,7 @@
                     <div class="card-body text-center">
                         <p class="card-text my-5">{{ $project->description }}</p>
                         <h6 class="card-subtitle my-5 text-body-secondary">{{ $project->date_of_creation }}</h6>
+                        <img src="{{ asset('storage/'.$project->cover_image) }}" alt="{{ $project->title }}-cover-image">
                     </div>
                 </div>
             </div>
