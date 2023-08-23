@@ -98,6 +98,18 @@ class ProjectController extends Controller
     {
         $form_data = $request->all();
 
+        if($request->hasFile('cover_image')){
+
+            if($project->cover_image){
+
+                Storage::delete($project->cover_image);
+            }
+            
+            $img_path = Storage::put('projects_images', $request->cover_image);
+            
+            $form_data['cover_image'] = $img_path;
+        }
+
         $project->update($form_data);
 
         $message = 'Modifica Progetto Completata';
