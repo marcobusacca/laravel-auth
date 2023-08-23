@@ -47,7 +47,7 @@
                             @else
                                 <label class="control-label my-2">Copertina:</label>
                             @endif
-                            <input type="file" name="cover_image" id="cover_image" class="form-control @error('cover_image') is-invalid @enderror" required>
+                            <input type="file" name="cover_image" id="cover_image" class="form-control @error('cover_image') is-invalid @enderror">
                             @error('cover_image')
                                 <div class="text-danger">{{ $message }}</div>
                             @enderror
