@@ -125,10 +125,29 @@ class ProjectController extends Controller
      */
     public function destroy(Project $project)
     {
+        if($project->cover_image){
+
+            Storage::delete($project->cover_image);
+        }
+
         $project->delete();
 
         $message = 'Cancellazione Progetto Completata';
 
         return redirect()->route('admin.projects.index', compact('message'));
+    }
+
+    public function deleteCoverImage(Project $project)
+    {
+        if($project->cover_image){
+
+            Storage::delete($project->cover_image);
+
+            $project->cover_image = NULL;
+
+            $project->update();
+        }
+        
+        return redirect()->route('admin.projects.edit', compact('project'));
     }
 }

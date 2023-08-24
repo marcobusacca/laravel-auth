@@ -37,8 +37,9 @@
                     <div class="form-group my-4">
                         <div class="my-5">
                             @if (!empty($project->cover_image))
-                                <label class="d-block control-label">Copertina Attuale:</label>
-                                <img src="{{ asset('storage/'.$project->cover_image) }}" alt="{{ $project->title }}-cover-image">
+                                <label class="d-block my-3 control-label">Copertina Attuale:</label>
+                                <img src="{{ asset('storage/'.$project->cover_image) }}" alt="{{ $project->title }}-cover-image" class="d-block my-3">
+                                <a href="{{ route('admin.projects.edit.delete-cover-image', $project) }}" class="btn btn-danger my-3">Cancella Copertina</a>
                             @endif
                         </div>
                         <div class="my-5">
